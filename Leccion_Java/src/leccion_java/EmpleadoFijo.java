@@ -10,21 +10,21 @@ package leccion_java;
  * @author isral
  */
 public class EmpleadoFijo extends Empleado {
-
+    //Declaracion de variablez
     double sueldo_fijo;
     double descuento_fijo;
-    double sueldo_final;
-
+    //Construcor por defecto
     public EmpleadoFijo() {
     }
+    //Constructor cpn herencia
 
-    public EmpleadoFijo(double sueldo_fijo, double descuento_fijo, double sueldo_final, String nombre, String apellido, String cedula, double comision) {
+    public EmpleadoFijo(double sueldo_fijo, double descuento_fijo, String nombre, String apellido, String cedula, double comision) {
         super(nombre, apellido, cedula, comision);
         this.sueldo_fijo = sueldo_fijo;
         this.descuento_fijo = descuento_fijo;
-        this.sueldo_final = sueldo_final;
     }
 
+    //Metodos gets y sets de las variables
     public double getSueldo_fijo() {
         return sueldo_fijo;
     }
@@ -40,14 +40,14 @@ public class EmpleadoFijo extends Empleado {
     public void setDescuento_fijo(double descuento_fijo) {
         this.descuento_fijo = descuento_fijo;
     }
-
+    //metodo para sacar el sueldo menos el escuento
     public double Calcular_sueldo_final() {
-        double valor = getSueldo_fijo() *(100 - getDescuento_fijo());
-        valor += super.getComision();
+        double valor = this.sueldo_fijo *(this.descuento_fijo/100);
+        valor = this.sueldo_fijo - valor;
         return valor;
     }
 
-
+    //Metodo To String y presentacion de datos por defecto
     @Override
     public String toString() {
         return String.format("%s\nSueldo Fijo: %.2f\nDescuento: %.2f\nSueldo Final: %.2f\n", super.toString(), sueldo_fijo, descuento_fijo, Calcular_sueldo_final());

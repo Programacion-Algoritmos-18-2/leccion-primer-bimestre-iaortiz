@@ -10,21 +10,22 @@ package leccion_java;
  * @author isral
  */
 public class Empleado {
+    //Atributos de empleado
     String nombre;
     String apellido;
     String cedula;
     double comision;
-
+    //Constuctores
     public Empleado() {
     }
-
+    //Consctructor con herencia
     public Empleado(String nombre, String apellido, String cedula, double comision) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
         this.comision = comision;
     }
-    
+    //Metodos gets y sets
     public String getNombre() {
         return nombre;
     }
@@ -56,10 +57,10 @@ public class Empleado {
     public void setComision(double comision) {
         this.comision = comision;
     }
-
+    //Metodo To String y presentacion de datos por defecto
     @Override
     public String toString() {
-        return String.format("Nombre y Apellido: %s %s\nCedula: %s\nComisión: %.2f\n", nombre, apellido,cedula,comision);
+        return String.format("Nombre y Apellido: %s %s\nCedula: %s\nComisión: %.2f", nombre, apellido,cedula,comision);
     }
     
 }
